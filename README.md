@@ -1,1 +1,1 @@
-# bash_scrypts
+Some Bash scripts.
