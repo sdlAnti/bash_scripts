@@ -2,8 +2,8 @@ Some Bash scripts.
 ## Backup
 1. [backup_copy_VMB.sh](scripts/backup_copy_VMB.sh): Copy backup to FTP server from bitrix virtual appliance, with: email alert, free space check, another running copy check.  
 ## Nano syntax highlighting
-1. [.conf](nano syntax higlighting/conf.nanorc): syntax highlighting for .conf files
-2. [.yaml](nano syntax higlighting/yaml.nanorc): syntax highlighting for .yaml files
+1. [.conf](scripts/nano_syntax_higlighting/conf.nanorc): syntax highlighting for .conf files
+2. [.yaml](scripts/nano_syntax_higlighting/yaml.nanorc): syntax highlighting for .yaml files
 ### Setup  
 Download and copy .nanorc files to /usr/share/nano/ 
 ```
