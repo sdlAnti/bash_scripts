@@ -18,3 +18,11 @@ If you want include all *.nanorc files from /usr/share/nano/ to current user
 ```
 find /usr/share/nano/ -iname "*.nanorc" -exec echo include {} \; >> ~/.nanorc
 ```
+## Renew Let's Encrypt's certificates using systemd unit and timer
+1. [certbot-update.service](scripts/certbot_systemd_update/certbot-update.service): systemd unit
+2. [.yaml](scripts/certbot_systemd_update/certbot-update.timer): systemd timer, run on start and every day at 22:00:00 +- 1h
+### Setup
+Download and copy to /etc/systemd/system/
+```
+
+``` 

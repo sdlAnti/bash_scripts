@@ -1,0 +1,7 @@
+[Unit]
+Description=Let's Encrypt renew certs via certbot
+
+[Service]
+Type=oneshot
+#if you dont need reload nginx delete deploy-hook
+ExecStart=/usr/bin/certbot renew --quiet --agree-tos --deploy-hook "nginx -s reload"
