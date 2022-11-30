@@ -31,3 +31,18 @@ Enable, start timer and reload systemctl daemon
 ```
 sudo systemctl enable certbot-update.timer && sudo systemctl start certbot-update.timer && sudo systemctl daemon-reload
 ```
+## Bash user highlighting  
+Root - red  
+Anothger user - green  
+### Setup  
+run as local users and root
+```
+cat << EOF >  ~/.bashrc
+if [ "$UID" = 0 ];
+then
+    PS1='\e[31m${debian_chroot:+($debian_chroot)}\u@\h:\w\$\e[m '
+else
+    PS1='\e[32m${debian_chroot:+($debian_chroot)}\u@\h:\w\$\e[m '
+fi
+EOF
+```
