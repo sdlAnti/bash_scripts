@@ -37,7 +37,7 @@ Anothger user - green
 ### Setup  
 run as local users and root
 ```
-cat << EOF >  ~/.bashrc
+cat << EOF >>  ~/.bashrc
 if [ "$UID" = 0 ];
 then
     PS1='\e[31m${debian_chroot:+($debian_chroot)}\u@\h:\w\$\e[m '
@@ -45,4 +45,35 @@ else
     PS1='\e[32m${debian_chroot:+($debian_chroot)}\u@\h:\w\$\e[m '
 fi
 EOF
+```
+## OpenSearch + OpenSearch Dashboards
+[opensearch.sh](scripts/opensearch.sh): automatic setup scrypt
+### Info  
+test on ubuntu 20.04
+
+download and setup:  
+1.  opensearch-2.4.0
+2.  opensearch-dashboards-2.4.0
+3.  openjdk-17-jdk  
+
+if you whant install another version edit link in scrypt  
+check openjdk [compatibility](https://opensearch.org/docs/latest/opensearch/install/compatibility/) for opensearch
+scrypt create:
+- user opensearch vs group opensearch, shell /sbin/nologin
+- directories /opt/opensearch and /opt/opensearch-dashboards
+- syshtemd units opensearch.service and opensearch-dashboards.service
+
+### Setup  
+just run opensearch.sh  
+Crtl+C opensearch-tar-install.sh arter is finished  
+reload systemctl daemon 
+```
+systemctl daemon-reload
+```
+start services
+```
+systemctl start opensearch
+systemctl enable opensearch
+systemctl start opensearch-dasboards
+systemctl enable opensearch-dasboards
 ```
