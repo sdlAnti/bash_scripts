@@ -1,4 +1,4 @@
-Some Bash scripts.  
+Some linux tools and tips, scripst and wise rabbit
 ## Backup
 1. [backup_copy_VMB.sh](scripts/backup_copy_VMB.sh): Copy backup to FTP server from bitrix virtual appliance, with: email alert, free space check, another running copy check.  
 ## Nano syntax highlighting
@@ -64,7 +64,11 @@ scrypt create:
 - syshtemd units opensearch.service and opensearch-dashboards.service
 
 ### Setup  
-just run opensearch.sh  
+```
+wget https://raw.githubusercontent.com/sdlAnti/bash_scripts/main/scripts/opensearch.sh
+chmod +x opensearch.sh
+./opensearch.sh
+```
 Crtl+C opensearch-tar-install.sh arter is finished  
 reload systemctl daemon 
 ```
@@ -76,4 +80,35 @@ systemctl start opensearch
 systemctl enable opensearch
 systemctl start opensearch-dasboards
 systemctl enable opensearch-dasboards
+```
+## Configure network with netplan
+### Setup
+Cteate .yaml file in /etc/netplan/
+```
+nano /etc/netplan/ens18.yaml
+```
+minimum configuration  
+don't forget edit interface name,ip,gw,dns!  
+pastate in you'r /etc/netplan/*.yaml file
+```
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens18:
+      addresses:
+      - 192.168.1.11/24
+      gateway4: 192.168.0.1
+      nameservers:
+        addresses:
+          - 192.168.0.1
+          - 8.8.8.8
+```
+Generate configuration 
+```
+sudo netplan --debug generate
+```
+Apply configuration
+```
+sudo netplan --debug apply
 ```
