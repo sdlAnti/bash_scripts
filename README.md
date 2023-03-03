@@ -38,11 +38,10 @@ Anothger user - green
 run as local users and root
 ```
 cat << EOF >>  ~/.bashrc
-if [ "$UID" = 0 ];
-then
-    PS1='\e[31m${debian_chroot:+($debian_chroot)}\u@\h:\w\$\e[m '
+if [ "$UID" = 0 ]; then
+    PS1="\[\e[32m\][\[\e[m\]\[\e[31m\]\u\[\e[m\]\[\e[33m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\[\e[32m\]]\[\e[m\]\[\e[32;44m\]\\$\[\e[m\] "
 else
-    PS1='\e[32m${debian_chroot:+($debian_chroot)}\u@\h:\w\$\e[m '
+    PS1="\[\e[32m\][\[\e[m\]\[\e[32m\]\u\[\e[m\]\[\e[33m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\[\e[32m\]]\[\e[m\]\[\e[32;44m\]\\$\[\e[m\] "
 fi
 EOF
 ```
