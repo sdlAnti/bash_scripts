@@ -95,6 +95,7 @@ network:
   renderer: networkd
   ethernets:
     ens18:
+      optional: true
       addresses:
       - 192.168.1.11/24
       gateway4: 192.168.0.1
