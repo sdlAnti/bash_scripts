@@ -46,7 +46,7 @@ fi
 EOF
 ```
 ## OpenSearch + OpenSearch Dashboards
-[opensearch.sh](scripts/opensearch.sh): automatic setup scrypt
+[opensearch.sh](scripts/opensearch.sh): automatic setup script
 ### Info  
 test on ubuntu 20.04
 
