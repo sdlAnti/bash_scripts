@@ -1,6 +1,7 @@
 Some linux tools and tips, scripst and wise rabbit
 ## Backup
 1. [backup_copy_VMB.sh](scripts/backup_copy_VMB.sh): Copy backup to FTP server from bitrix virtual appliance, with: email alert, free space check, another running copy check.  
+1. [pg_backup.sh](scripts/pg_backup.sh): Daily, weekly, monthly, yearly backup postgres DB to dir with backup rotation
 ## Nano syntax highlighting
 1. [.conf](scripts/nano_syntax_higlighting/conf.nanorc): syntax highlighting for .conf files
 2. [.yaml](scripts/nano_syntax_higlighting/yaml.nanorc): syntax highlighting for .yaml files
