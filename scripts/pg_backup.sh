@@ -69,10 +69,10 @@ clear () {
 }
 
 send_email () {
-    sendemail -f no-reply@507787.ru -t service@507787.ru \
+    sendemail -f FROM_EMAIL -t TO_EMAIL \
     -u Telematic Database backup is failed \
     -m "Server: $(hostname) \nInternal IP: $(hostname -I) \nExternal IP: $(curl -s 2ip.ru) \nError log: \n$(cat "$TMP_DIR"/error.log)" \
-    -s 94.250.249.80  -v -o message-charset=utf-8
+    -s SERVER_IP  -v -o message-charset=utf-8
 }
 
 makebackup () {
